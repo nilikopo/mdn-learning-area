@@ -29,7 +29,14 @@
       const para = document.createElement("p");
       para.textContent = "We hope you enjoyed the ride.";
       sect.appendChild(para);
-      linkPara.appendChild(text); 
+      linkPara.appendChild(text);
+
+      // 
+      sect.appendChild(linkPara); // сдвиг уже существующего параграфа с ссылкой вниз секции
+      sect.removeChild(linkPara); // удаление дочернего элемента LinkPara у секции
+      // linkPara.remove() // просто удаление
+
+      
     </script>
   </body>
 </html>
