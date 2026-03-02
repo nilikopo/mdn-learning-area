@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple DOM example</title>
+    <style>
+      .highlight {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <section>
@@ -16,6 +25,7 @@
       </p>
     </section>
     <script>
+      // Создание новых элементов и их отображение
       const link = document.querySelector("a");
       const sect = document.querySelector("section");
       const text = document.createTextNode(
@@ -31,12 +41,23 @@
       sect.appendChild(para);
       linkPara.appendChild(text);
 
-      // 
+
+      // Удаление / сдвиг
       sect.appendChild(linkPara); // сдвиг уже существующего параграфа с ссылкой вниз секции
       sect.removeChild(linkPara); // удаление дочернего элемента LinkPara у секции
       // linkPara.remove() // просто удаление
 
-      
+
+      // Манипуляция со стилями
+      // Это всё добавляет инлайновые стили
+      // para.style.color = "white"
+      // para.style.backgroundColor = "black"
+      // para.style.padding = "10px"
+      // para.style.width = "250px"
+      // para.style.textAlign = "center"
+
+      // Добавление стилей через манипуляцию с классами
+      para.classList.add("highlight")
     </script>
   </body>
 </html>
